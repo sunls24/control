@@ -1,0 +1,72 @@
+{
+  "simple_task": [
+    {
+      "name": "京东签到",
+      "crontab": "0 8,10,12 * * *",
+      "package": "com.jingdong.app.mall",
+      "config": {
+        "try_count": 5,
+        "try_wait": "1s"
+      },
+      "actions": [
+        {
+          "text": "我的"
+        },
+        {
+          "text": "京豆"
+        },
+        {
+          "text": "立即签到",
+          "exit": "赚更多京豆"
+        },
+        {
+          "text": "签到领豆"
+        }
+      ]
+    },
+    {
+      "name": "一键价保",
+      "crontab": "10 7,10,13,16,19,22 * * *",
+      "package": "com.jingdong.app.mall",
+      "config": {
+        "try_count": 5,
+        "try_wait": "1s"
+      },
+      "actions": [
+        {
+          "text": "我的"
+        },
+        {
+          "text": "客户服务"
+        },
+        {
+          "text": "价格保护"
+        },
+        {
+          "text": "键价保"
+        }
+      ]
+    },
+    {
+      "name": "一嗨租车",
+      "crontab": "20 8,10,12 * * *",
+      "package": "com.ehai",
+      "config": {
+        "try_count": 5,
+        "try_wait": "2s"
+      },
+      "actions": [
+        {
+          "text": "我的"
+        },
+        {
+          "text": "签到领积分"
+        },
+        {
+          "text": "去签到",
+          "exit": "已签到"
+        }
+      ]
+    }
+  ]
+}
