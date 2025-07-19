@@ -1,72 +1,105 @@
-{
-  "simple_task": [
-    {
-      "name": "京东签到",
-      "crontab": "0 8,10,12 * * *",
-      "package": "com.jingdong.app.mall",
-      "config": {
-        "try_count": 5,
-        "try_wait": "1s"
+[
+  {
+    "name": "一嗨签到",
+    "crontab": "20 8,10,12 * * *",
+    "atOnce": true,
+    "dir": "image/yh",
+    "package": "cn.1hai.1haiiPhone",
+    "actions": [
+      {
+        "path": "my.png",
+        "range": 3,
+        "popups": [
+          {
+            "find": {
+              "path": "ad.png"
+            },
+            "tap": {
+              "x": 188,
+              "y": 564
+            }
+          },
+          {
+            "find": {
+              "path": "ad2.png"
+            },
+            "tap": {
+              "x": 188,
+              "y": 544
+            }
+          }
+        ]
       },
-      "actions": [
-        {
-          "text": "我的"
-        },
-        {
-          "text": "京豆"
-        },
-        {
-          "text": "立即签到",
-          "exit": "赚更多京豆"
-        },
-        {
-          "text": "签到领豆"
-        }
-      ]
-    },
-    {
-      "name": "一键价保",
-      "crontab": "10 7,10,13,16,19,22 * * *",
-      "package": "com.jingdong.app.mall",
-      "config": {
-        "try_count": 5,
-        "try_wait": "1s"
+      {
+        "path": "go-sign.png",
+        "range": 3
       },
-      "actions": [
-        {
-          "text": "我的"
+      {
+        "path": "sign.png",
+        "range": 2,
+        "exit": {
+          "path": "sign-exit.png",
+          "range": 2
         },
-        {
-          "text": "客户服务"
-        },
-        {
-          "text": "价格保护"
-        },
-        {
-          "text": "键价保"
+        "wait": {
+          "path": "sign-wait.png",
+          "range": 3
         }
-      ]
-    },
-    {
-      "name": "一嗨租车",
-      "crontab": "20 8,10,12 * * *",
-      "package": "com.ehai",
-      "config": {
-        "try_count": 5,
-        "try_wait": "2s"
+      }
+    ]
+  },
+  {
+    "name": "一键价保",
+    "crontab": "10 7,10,13,16,19,22 * * *",
+    "atOnce": false,
+    "dir": "image/jd",
+    "package": "com.360buy.jdmobile",
+    "actions": [
+      {
+        "path": "my.png",
+        "range": 3
       },
-      "actions": [
-        {
-          "text": "我的"
-        },
-        {
-          "text": "签到领积分"
-        },
-        {
-          "text": "去签到",
-          "exit": "已签到"
+      {
+        "path": "kehu.png",
+        "range": 1
+      },
+      {
+        "path": "jiabao.png",
+        "range": 1
+      },
+      {
+        "path": "yijian.png",
+        "range": 3
+      }
+    ]
+  },
+  {
+    "name": "京豆签到",
+    "crontab": "8 8,10 * * *",
+    "atOnce": false,
+    "dir": "image/jd",
+    "package": "com.360buy.jdmobile",
+    "actions": [
+      {
+        "path": "my.png",
+        "range": 3
+      },
+      {
+        "path": "jd.png",
+        "range": 1
+      },
+      {
+        "path": "sign.png",
+        "range": 1,
+        "exit": {
+          "path": "sign-exit.png",
+          "range": 1
         }
-      ]
-    }
-  ]
-}
+      },
+      {
+        "path": "sign2.png",
+        "range": 1
+      }
+    ]
+  }
+]
