@@ -1,3 +1,9 @@
+github.com/Masterminds/semver v1.5.0 h1:H65muMkzWKEuNDnfl9d70GUjFniHKHRbFPGBuZ3QEww=
+github.com/Masterminds/semver v1.5.0/go.mod h1:MB6lktGJrhw8PrUyiEoblNEGEQ+RzHPF078ddwwvV3Y=
+github.com/electricbubble/gadb v0.1.0 h1:h7RKlToMlFtGW4rUkAd4GSiFAHioMH5Nx7jtbb2nKi4=
+github.com/electricbubble/gadb v0.1.0/go.mod h1:3293YJ6OWHv/Q6NA5dwSbK43MbmYm8+Vz2d7h5J3IA8=
+github.com/electricbubble/gadb v0.1.1-0.20250314021536-2e108649b088 h1:8FXZnb8M4bPRfiyePqMOupGupd1uH6XMWnLllYks6hI=
+github.com/electricbubble/gadb v0.1.1-0.20250314021536-2e108649b088/go.mod h1:3293YJ6OWHv/Q6NA5dwSbK43MbmYm8+Vz2d7h5J3IA8=
 github.com/electricbubble/gidevice v0.6.2 h1:eIeCHH7Xn5fTwnUv3qL8c7L4anKIHtjlTBkgr1LDVTc=
 github.com/electricbubble/gidevice v0.6.2/go.mod h1:bRHL2M9qgeEKju8KRvKMZUVEg7t5zMnTiG3SJ3QDH5o=
 github.com/electricbubble/opencv-helper v0.0.3 h1:p0sHTUPPPm8GqzVUtYH+wQbJoguzotUXVRAS7Ibk7nI=
@@ -12,6 +18,8 @@ github.com/lunixbochs/struc v0.0.0-20200707160740-784aaebc1d40/go.mod h1:vy1vK6w
 github.com/lunixbochs/struc v0.0.0-20241101090106-8d528fa2c543 h1:GxMuVb9tJajC1QpbQwYNY1ZAo1EIE8I+UclBjOfjz/M=
 github.com/lunixbochs/struc v0.0.0-20241101090106-8d528fa2c543/go.mod h1:vy1vK6wD6j7xX6O6hXe621WabdtNkou2h7uRtTfRMyg=
 github.com/pascaldekloe/goe v0.1.0/go.mod h1:lzWF7FIEvWOWxwDKqyGYQf6ZUaNfKdP144TG7ZOy1lc=
+github.com/prife/goadb v0.5.0 h1:aKfgajFe66hI6WzFzMkaw3Wg942u6vsGjOLdY/XOEb0=
+github.com/prife/goadb v0.5.0/go.mod h1:XIvGyJoFpoSz4NJL5Maw3X7WMDg+t2T5BOQYZy/mfbU=
 github.com/robfig/cron/v3 v3.0.1 h1:WdRxkvbJztn8LMz/QEvLN5sBU+xKpSqwwUO1Pjr4qDs=
 github.com/robfig/cron/v3 v3.0.1/go.mod h1:eQICP3HwyT7UooqI/z+Ov+PtYAWygg1TEWWzGIFLtro=
 github.com/satori/go.uuid v1.2.0 h1:0uYX9dsZ2yD7q2RtLRtPSdGDWzjeM3TbMJP9utgA0ww=
@@ -21,6 +29,8 @@ github.com/sunls24/gwda v0.0.0-20250718131020-499b22a89824/go.mod h1:kO/HvuQhr5i
 gocv.io/x/gocv v0.27.0/go.mod h1:n4LnYjykU6y9gn48yZf4eLCdtuSb77XxSkW6g0wGf/A=
 gocv.io/x/gocv v0.41.0 h1:KM+zRXUP28b6dHfhy+4JxDODbCNQNtLg8kio+YE7TqA=
 gocv.io/x/gocv v0.41.0/go.mod h1:zYdWMj29WAEznM3Y8NsU3A0TRq/wR/cy75jeUypThqU=
+golang.org/x/sys v0.34.0 h1:H5Y5sJ2L2JRdyv7ROF1he/lPdvFsd0mJHFw2ThKHxLA=
+golang.org/x/sys v0.34.0/go.mod h1:BJP2sWEmIv4KK5OTEluFJCKSidICx8ciO85XgH3Ak8k=
 gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405/go.mod h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=
 gopkg.in/check.v1 v1.0.0-20180628173108-788fd7840127 h1:qIbj1fsPNlZgppZ+VLlY7N33q108Sa+fhmuc+sWQYwY=
 gopkg.in/check.v1 v1.0.0-20180628173108-788fd7840127/go.mod h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=

@@ -9,22 +9,24 @@ import (
 )
 
 func TestFind(t *testing.T) {
-	driver, err := gwda.NewUSBDriver(nil)
-	if err != nil {
-		t.Fatal(err)
-	}
-	s, err := driver.Screenshot()
-	if err != nil {
-		t.Fatal(err)
-	}
+	//driver, err := gwda.NewUSBDriver(nil)
+	//if err != nil {
+	//	t.Fatal(err)
+	//}
+	//s, err := driver.Screenshot()
+	//if err != nil {
+	//	t.Fatal(err)
+	//}
 
-	tpl := "./sign.png"
-	count := 10
+	s := "./screenshot.png"
+	tpl := "./right.png"
+	count := 1
 
+	var err error
 	var p image.Point
 	start := time.Now()
 	for i := 0; i < count; i++ {
-		p, err = Find(s.Bytes(), read(tpl))
+		p, err = Find(read(s), read(tpl))
 		if err != nil {
 			t.Fatal(err)
 		}
@@ -34,7 +36,7 @@ func TestFind(t *testing.T) {
 
 	start = time.Now()
 	for i := 0; i < count; i++ {
-		p, err = Find(s.Bytes(), read(tpl), WithRange(Bottom))
+		p, err = Find(read(s), read(tpl), WithRange(Bottom))
 		if err != nil {
 			t.Fatal(err)
 		}
