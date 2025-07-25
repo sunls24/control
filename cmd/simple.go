@@ -20,7 +20,7 @@ type Config struct {
 
 func init() {
 	// TODO TapAction Find string() 实现
-	//slog.SetLogLoggerLevel(slog.LevelDebug)
+	slog.SetLogLoggerLevel(slog.LevelDebug)
 }
 
 func main() {

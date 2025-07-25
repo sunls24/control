@@ -6,11 +6,29 @@ type Config struct {
 	Actions []Action `json:"actions"`
 }
 
+func (c *Config) setAfterWait() {
+	for i, a := range c.Actions {
+		if i == 0 {
+			continue
+		}
+		aw := a.TapAction.Find
+		if a.Wait.exist() {
+			aw = a.Wait
+		}
+		c.Actions[i-1].afterWait = aw
+		if a.Exit.exist() {
+			c.Actions[i-1].afterExit = a.Exit
+		}
+	}
+}
+
 type Action struct {
 	TapAction
 
 	Exit Find `json:"exit"`
 	Wait Find `json:"wait"`
+
+	afterWait, afterExit Find
 
 	Popups []Popup `json:"popups"`
 }

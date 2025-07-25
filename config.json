@@ -2,7 +2,7 @@
   {
     "name": "一嗨签到",
     "crontab": "20 8,10,12 * * *",
-    "atOnce": true,
+    "atOnce": false,
     "dir": "image/yh",
     "package": "cn.1hai.1haiiPhone",
     "actions": [
@@ -51,7 +51,7 @@
   {
     "name": "一键价保",
     "crontab": "10 7,10,13,16,19,22 * * *",
-    "atOnce": false,
+    "atOnce": true,
     "dir": "image/jd",
     "package": "com.360buy.jdmobile",
     "actions": [
@@ -68,6 +68,10 @@
         "range": 1
       },
       {
+        "exit": {
+          "path": "yijian-exit.png",
+          "range": 3
+        },
         "path": "yijian.png",
         "range": 3
       }
@@ -76,7 +80,7 @@
   {
     "name": "京豆签到",
     "crontab": "8 8,10 * * *",
-    "atOnce": false,
+    "atOnce": true,
     "dir": "image/jd",
     "package": "com.360buy.jdmobile",
     "actions": [

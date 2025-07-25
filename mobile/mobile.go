@@ -75,6 +75,7 @@ func (c *Control) Run() error {
 		}
 	}()
 
+	c.cfg.setAfterWait()
 	for _, action := range c.cfg.Actions {
 		exit, err := c.waitAndTap(action)
 		if err != nil || exit {
@@ -88,6 +89,7 @@ func (c *Control) Run() error {
 
 func (c *Control) waitAndTap(action Action) (bool, error) {
 	c.logger.Info("start waitAndTap => " + action.Path)
+	clicked := 0
 	for i := 0; i < 100; i++ {
 		screenshot, err := c.driver.Screenshot()
 		if err != nil {
@@ -114,6 +116,35 @@ func (c *Control) waitAndTap(action Action) (bool, error) {
 			continue
 		}
 
+		if clicked > 0 {
+			if action.afterExit.exist() {
+				_, err = c.find(screenshot, action.afterExit)
+				if err == nil {
+					c.logger.Info("after found exit => " + action.afterExit.Path)
+					return true, nil
+				}
+			}
+			if action.afterWait.exist() {
+				_, err = c.find(screenshot, action.afterWait)
+				if err != nil {
+					clicked++
+					if clicked > 5 {
+						clicked = 1
+						screenshot, err = c.driver.Screenshot()
+						if err != nil {
+							continue
+						}
+						err = c.tapAction(screenshot, action.TapAction)
+						if err == nil {
+							c.logger.Info("after tap => " + action.TapAction.Path)
+						}
+					}
+					continue
+				}
+			}
+			return false, nil
+		}
+
 		if action.Exit.exist() {
 			_, err = c.find(screenshot, action.Exit)
 			if err == nil {
@@ -121,6 +152,7 @@ func (c *Control) waitAndTap(action Action) (bool, error) {
 				return true, nil
 			}
 		}
+
 		if action.Wait.exist() {
 			_, err = c.find(screenshot, action.Wait)
 			if err != nil {
@@ -130,10 +162,12 @@ func (c *Control) waitAndTap(action Action) (bool, error) {
 		}
 
 		err = c.tapAction(screenshot, action.TapAction)
-		if err == nil {
-			c.logger.Info("tap => " + action.TapAction.Path)
-			return false, nil
+		if err != nil {
+			continue
 		}
+		c.logger.Info("tap => " + action.TapAction.Path)
+		time.Sleep(time.Millisecond * 500)
+		clicked = 1
 	}
 	return false, errors.New("wait and tap timeout")
 }
